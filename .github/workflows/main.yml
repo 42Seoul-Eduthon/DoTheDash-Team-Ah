@@ -16,4 +16,4 @@ jobs:
           cl hello.c
       - name: run
         run: |
-          hello
+          hello.exe
