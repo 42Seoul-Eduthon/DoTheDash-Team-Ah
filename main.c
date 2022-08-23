@@ -18,6 +18,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len) {
 int main() {
   const char *a = "c:\\abc\\bbb\\ccc";
   size_t      s = strlen(a);
+  printf("origin: %s\n", a);
   while (s > 0) {
     if (a[s] == '\\') printf("%s\n", ft_substr(a, s + 1, strlen(a) - s));
     s--;
