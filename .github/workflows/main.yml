@@ -16,4 +16,6 @@ jobs:
           cl hello.c
       - name: run
         run: |
+          dir
           hello.exe
+        shell: cmd
