@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <windows.h>
+
 char *ft_substr(char const *s, unsigned int start, size_t len) {
   size_t s_len;
   char  *ret;
@@ -10,9 +11,10 @@ char *ft_substr(char const *s, unsigned int start, size_t len) {
   if (len > s_len - start) len = s_len - start;
   ret = (char *)malloc(sizeof(char) * (len + 1));
   if (ret == 0) return (0);
-  strlcpy(ret, s + start, len + 1);
+  strncpy(ret, s + start, len + 1);
   return (ret);
 }
+
 int main() {
   const char *a = "c:\\abc\\bbb\\ccc";
   size_t      s = strlen(a);
