@@ -17,4 +17,4 @@ jobs:
         cl main.c
     - name: run
       run: |
-        main.exe
+        main
