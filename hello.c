@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#if defined __WINDOWS__
+#if defined _WIN32
 #define DELIMITER '\\'
 #elif defined __APPLE__
 #define DELIMITER '/'
