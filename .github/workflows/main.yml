@@ -15,15 +15,15 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1.4.1
       - name: compile(windows)
         run: |
-          cl main.c hello.c
+          cl tester/ft_get_filename_test.c ft_get_filename.c
         if: matrix.os == 'windows-latest'
       - name: compile(macos)
         run: |
-          gcc main.c hello.c
+          gcc tester/ft_get_filename_test.c ft_get_filename.c
         if: matrix.os == 'macos-latest'
       - name: run(windows)
         run: |
-          main.exe
+          ft_get_filename_test.exe
         shell: cmd
         if: matrix.os == 'windows-latest'
       - name: run(macos)
@@ -40,15 +40,15 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1.4.1
       - name: compile(windows)
         run: |
-          cl endian.c
+          cl tester/ft_hostcmp_test.c /I .
         if: matrix.os == 'windows-latest'
       - name: compile(macos)
         run: |
-          gcc endian.c
+          gcc tester/ft_hostcmp_test.c -I.
         if: matrix.os == 'macos-latest'
       - name: run(windows)
         run: |
-          endian.exe
+          ft_hostcmp_test.exe
         shell: cmd
         if: matrix.os == 'windows-latest'
       - name: run(macos)
