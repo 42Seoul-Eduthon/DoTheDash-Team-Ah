@@ -23,7 +23,7 @@ jobs:
         if: matrix.os == 'macos-latest'
       - name: run(windows)
         run: |
-          hello.exe
+          main.exe
         shell: cmd
         if: matrix.os == 'windows-latest'
       - name: run(macos)
