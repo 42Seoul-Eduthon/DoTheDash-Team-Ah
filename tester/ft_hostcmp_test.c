@@ -11,8 +11,6 @@ void check(size_t a, size_t b, int expect_same);
 #include "FT_HOSTCMP.h"
 
 int main() {
-
-
     check(8080, htonl(8080), 1);
     check(8080, 8080, 0);
     check(htonl(8080), 8080, 1);
@@ -28,21 +26,29 @@ int main() {
 #endif
 
 #if defined(TEST2)
-    #define FT_USE_64_BIT
-    #define FT_USE_LITTLE_ENDIAN
+#define FT_USE_64_BIT
+#define FT_USE_LITTLE_ENDIAN
+#include "FT_HOSTCMP.h"
 
+int main() {
     check(8080, htonl(8080), 0);
     check(8080, 8080, 0);
     check(htonl(8080), 8080, 0);
     check(0, 0, 1);
-    check(UINT32_MAX, UINT32_MAX, 0);
+    check(UINT32_MAX, UINT32_MAX, 1);
     check(5, 5, 0);
     check(8080, 0x901f000000000000, 1);
 
+    return 0;
+}
+#endif
 
-    #define FT_USE_32_BIT
-    #define FT_USE_BIG_ENDIAN
+#if defined(TEST3)
+#define FT_USE_32_BIT
+#define FT_USE_BIG_ENDIAN
+#include "FT_HOSTCMP.h"
 
+int main() {
     check(8080, htonl(8080), 0);
     check(8080, 8080, 1);
     check(htonl(8080), 8080, 0);
@@ -50,6 +56,10 @@ int main() {
     check(UINT32_MAX, UINT32_MAX, 1);
     check(5, 5, 1);
     check(8080, 0x901f000000000000, 0);
+
+    return 0;
+}
+#endif
 
     #undef FT_USE_32_BIT
     #undef FT_USE_BIG_ENDIAN
