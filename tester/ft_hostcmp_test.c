@@ -1,9 +1,4 @@
-#if defined __APPLE__
 #include <arpa/inet.h>
-#elif defined _WIN32
-#include <Winsock2.h>
-#endif
-
 #include <stdlib.h>
 #include <stdio.h>
 
