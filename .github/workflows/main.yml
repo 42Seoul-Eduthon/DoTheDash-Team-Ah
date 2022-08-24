@@ -48,7 +48,7 @@ jobs:
         if: matrix.os == 'macos-latest'
       - name: run(ubuntu)
         run: |
-          ft_hostcmp_test.exe
+          ./a.out
         shell: cmd
         if: matrix.os == 'ubuntu-latest'
       - name: run(macos)
