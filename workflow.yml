@@ -6,6 +6,16 @@ on:
 
 jobs:
   ex00:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile(ubuntu)
+        run: |
+          gcc tester/main00.c ex00/hello_preprocessor.c
+      - name: run(ubuntu)
+        run: |
+          ./a.out
+  ex01:
     strategy:
       matrix:
         os: [windows-latest, macos-latest]
@@ -15,11 +25,11 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1.4.1
       - name: compile(windows)
         run: |
-          cl tester/ft_get_filename_test.c ft_get_filename.c
+          cl tester/ft_get_filename_test.c ex01/ft_get_filename.c
         if: matrix.os == 'windows-latest'
       - name: compile(macos)
         run: |
-          gcc tester/ft_get_filename_test.c ft_get_filename.c
+          gcc tester/ft_get_filename_test.c ex01/ft_get_filename.c
         if: matrix.os == 'macos-latest'
       - name: run(windows)
         run: |
@@ -30,7 +40,7 @@ jobs:
         run: |
           ./a.out
         if: matrix.os == 'macos-latest'
-  ex01:
+  ex02:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
@@ -40,15 +50,15 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1.4.1
       - name: compile(ubuntu)
         run: |
-          gcc tester/ft_hostcmp_test.c -I. -D TEST1=1
+          gcc tester/ft_hostcmp_test.c -I./ex01/ -D TEST1=1
         if: matrix.os == 'ubuntu-latest'
       - name: compile(macos)
         run: |
-          gcc tester/ft_hostcmp_test.c -I. -D TEST1=1
+          gcc tester/ft_hostcmp_test.c -I./ex01/ -D TEST1=1
         if: matrix.os == 'macos-latest'
       - name: compile(windows)
         run: |
-          cl tester/ft_hostcmp_test.c /I . /DTEST1=1
+          cl tester/ft_hostcmp_test.c /I ./ex01/ /DTEST1=1
         if: matrix.os == 'windows-latest'
         shell: cmd
       - name: run(ubuntu)

@@ -16,6 +16,20 @@
 
 </br>
 
+## What can we learn from this course?
+
+- Multi architecture support programming
+
+- Write the Code with low function call overhead
+
+- Operations that do not care about parameters
+
+</br>
+
+</br>
+
+</br>
+
 ## How to use Github Action
 
 1. Place the [workflow file](workflow.yml) in your _repository_, `.github/workflows`
