@@ -3,7 +3,7 @@
 #include <string.h>
 
 #if defined _WIN32
-#define DELIMITER '/'
+#define DELIMITER '\\'
 #elif defined __APPLE__
 // #elif defined __MACH__
 #define DELIMITER '/'
