@@ -39,9 +39,11 @@ int         main() {
         printf("\tOK\n");
       } else {
         printf("\tFAIL\n");
+        exit(1);
       }
     } else {
       printf("\tFAIL\n");
+      exit(1);
     }
     free(filename);
     filename = NULL;
