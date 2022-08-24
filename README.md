@@ -1,0 +1,35 @@
+# Preprocessor Deep Dive
+
+## How to participate in this process
+
+1. Read The [Subject](./subject.pdf)
+
+2. Make your own _repository_ for submit
+
+3. Read each assignment and create a file in the _repository_ where you need to submit. (like ex00/ft_get_filename.c)
+
+4. Download [workflow file](workflow.yml) for Multi-architecture Test!
+
+</br>
+
+</br>
+
+</br>
+
+## How to use Github Action
+
+1. Place the [workflow file](workflow.yml) in `.github/workflows`
+
+2. And just Run `git push`
+
+3. The submission repository structure is as follows:
+
+```text
+.github
+ㄴ workflows
+  ㄴ workflow.yml
+ex00
+ㄴ somefile
+ex01
+ㄴ somefile
+```
