@@ -15,25 +15,17 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1.4.1
       - name: compile(windows)
         run: |
-          cl hello.c
+          cl main.cpp hello.c
         if: matrix.os == 'windows-latest'
-      - name: compile(ubuntu)
-        run: |
-          gcc hello.c
-        if: matrix.os == 'ubuntu-latest'
       - name: compile(macos)
         run: |
-          clang hello.c
+          g++ main.cpp hello.c
         if: matrix.os == 'macos-latest'
       - name: run(windows)
         run: |
           hello.exe
         shell: cmd
         if: matrix.os == 'windows-latest'
-      - name: run(ubuntu)
-        run: |
-          ./a.out
-        if: matrix.os == 'ubuntu-latest'
       - name: run(macos)
         run: |
           ./a.out

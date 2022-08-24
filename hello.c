@@ -8,11 +8,14 @@
 #define DELIMITER '/'
 #elif defined __linux__
 #define DELIMITER '/'
+#else
+#define DELIMITER -1
 #endif
 
 char* ft_get_filename(const char* path) {
-  char* filename = NULL;
-  char* last_delimiter = NULL;
+  char*  filename = NULL;
+  char*  last_delimiter = NULL;
+  size_t pos;
   if (path == NULL) {
     return NULL;
   }
@@ -20,19 +23,14 @@ char* ft_get_filename(const char* path) {
   if (last_delimiter == NULL) {
     return NULL;
   }
-  filename = malloc(strlen(last_delimiter) + 1);
+  pos = strlen(last_delimiter);
+  if (pos == 1) {
+    return NULL;
+  }
+  filename = malloc(pos + 1);
   if (filename == NULL) {
     return NULL;
   }
   strcpy(filename, last_delimiter + 1);
   return filename;
-}
-
-int main() {
-  char* filename = ft_get_filename("/Users/username/Desktop/test.c");
-  char* win_name = ft_get_filename("C:\\Users\\username\\Desktop\\test.c");
-  printf("%s\n", filename);
-  printf("%s\n", win_name);
-  free(filename);
-  free(win_name);
 }
