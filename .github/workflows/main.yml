@@ -15,11 +15,11 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1.4.1
       - name: compile(windows)
         run: |
-          cl main.cpp hello.c
+          cl main.c hello.c
         if: matrix.os == 'windows-latest'
       - name: compile(macos)
         run: |
-          g++ main.cpp hello.c
+          gcc main.c hello.c
         if: matrix.os == 'macos-latest'
       - name: run(windows)
         run: |
