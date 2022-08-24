@@ -30,4 +30,28 @@ jobs:
         run: |
           ./a.out
         if: matrix.os == 'macos-latest'
-
+  ex01:
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ilammy/msvc-dev-cmd@v1.4.1
+      - name: compile(windows)
+        run: |
+          cl endian.c
+        if: matrix.os == 'windows-latest'
+      - name: compile(macos)
+        run: |
+          gcc endian.c
+        if: matrix.os == 'macos-latest'
+      - name: run(windows)
+        run: |
+          endian.exe
+        shell: cmd
+        if: matrix.os == 'windows-latest'
+      - name: run(macos)
+        run: |
+          ./a.out
+        if: matrix.os == 'macos-latest'
