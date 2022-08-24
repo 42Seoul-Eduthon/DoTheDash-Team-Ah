@@ -1,6 +1,6 @@
 #if defined _WIN32
 #include <Winsock.h>
-#include <Winsock2.h>
+// #include <Winsock2.h>
 #elif defined __APPLE__
 #include <arpa/inet.h>
 #else
