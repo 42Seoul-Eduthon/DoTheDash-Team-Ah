@@ -3,6 +3,7 @@
 #elif defined _WIN32
 #include <Winsock2.h>
 #endif
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -65,11 +66,10 @@ int main() {
 }
 #endif
 
-    #undef FT_USE_32_BIT
-    #undef FT_USE_BIG_ENDIAN
+#if defined(TEST4)
 
-    #define FT_USE_64_BIT
-    #define FT_USE_BIG_ENDIAN
+#define FT_USE_64_BIT
+#define FT_USE_BIG_ENDIAN
 
     check(8080, htonl(8080), 0);
     check(8080, 8080, 1);
