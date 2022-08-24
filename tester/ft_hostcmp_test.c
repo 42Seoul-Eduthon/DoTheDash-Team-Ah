@@ -3,6 +3,8 @@
 #include <Winsock2.h>
 #elif defined __APPLE__
 #include <arpa/inet.h>
+#else
+#include <arpa/inet.h>
 #endif
 #include <stdlib.h>
 #include <stdio.h>
