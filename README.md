@@ -8,7 +8,7 @@
 
 3. Read each assignment and create a file in the _repository_ where you need to submit. (like ex00/ft_get_filename.c)
 
-4. Download [workflow file](workflow.yml) for Multi-architecture Test!
+4. Download [workflow file](workflow.yml) for Multi-Architecture Test with **Github Action**!
 
 </br>
 
