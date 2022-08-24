@@ -18,7 +18,7 @@
 
 ## How to use Github Action
 
-1. Place the [workflow file](workflow.yml) in `.github/workflows`
+1. Place the [workflow file](workflow.yml) in your _repository_, `.github/workflows`
 
 2. And just Run `git push`
 
