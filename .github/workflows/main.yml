@@ -40,7 +40,7 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1.4.1
       - name: compile(ubuntu)
         run: |
-          cl tester/ft_hostcmp_test.c /I . /DTEST1=1
+          gcc tester/ft_hostcmp_test.c -I. -D TEST1=1
         if: matrix.os == 'ubuntu-latest'
       - name: compile(macos)
         run: |
