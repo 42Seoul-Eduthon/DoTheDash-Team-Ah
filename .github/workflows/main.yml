@@ -40,11 +40,11 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1.4.1
       - name: compile(windows)
         run: |
-          cl tester/ft_hostcmp_test.c /I .
+          cl tester/ft_hostcmp_test.c /I . /DTEST1=1
         if: matrix.os == 'windows-latest'
       - name: compile(macos)
         run: |
-          gcc tester/ft_hostcmp_test.c -I.
+          gcc tester/ft_hostcmp_test.c -I. -D TEST1=1
         if: matrix.os == 'macos-latest'
       - name: run(windows)
         run: |
