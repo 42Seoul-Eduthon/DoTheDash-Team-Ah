@@ -49,7 +49,6 @@ jobs:
       - name: run(ubuntu)
         run: |
           ./a.out
-        shell: cmd
         if: matrix.os == 'ubuntu-latest'
       - name: run(macos)
         run: |
